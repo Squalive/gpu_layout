@@ -1,0 +1,20 @@
+[package]
+name = "gpu_layout"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = ["std", "glam"]
+
+std = ["thiserror/std", "glam?/std"]
+
+glam = ["dep:glam"]
+
+[dependencies]
+# Internal
+gpu_layout_macros = { path = "macros" }
+
+# External
+cfg-if = { version = "1.0.4", default-features = false }
+thiserror = { version = "2.0.17", default-features = false }
+glam = { version = "0.30.9", default-features = false, optional = true }
