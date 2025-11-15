@@ -11,7 +11,10 @@ mod std140;
 mod std430;
 
 pub use gpu_layout_macros::GpuLayout;
-pub use rw::{BufferMut, BufferRef, CreateFrom, ReadFrom, Reader, WriteInto, Writer};
+pub use rw::{
+    AccessError, BufferMut, BufferRef, CreateFrom, EnlargeError, ReadFrom, Reader, WriteInto,
+    Writer,
+};
 pub use std140::Std140;
 pub use std430::Std430;
 
