@@ -95,5 +95,10 @@ pub(super) fn derive(input: &DeriveInput, field_datas: &[FieldData]) -> proc_mac
                 }
             };
         }
+
+        impl #impl_generics ::gpu_layout::GpuLayoutSize<#layout_ts> for #name #ty_generics #where_clause
+        where
+            #( #field_types: ::gpu_layout::GpuLayoutSize<#layout_ts>, )*
+        {}
     }
 }
