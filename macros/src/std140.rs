@@ -71,7 +71,7 @@ pub(super) fn derive(input: &DeriveInput, field_datas: &[FieldData]) -> proc_mac
         {
             type ExtraMetadata = ::gpu_layout::StructMetadata<#num_of_fields>;
             const METADATA: ::gpu_layout::Metadata<Self::ExtraMetadata> = {
-                let struct_alignment = ::gpu_layout::AlignmentValue::max([ ::gpu_layout::AlignmentValue::new(16), #( #alignments, )* ]);
+                let struct_alignment = ::gpu_layout::AlignmentValue::max([ #( #alignments, )* ]);
 
                 let extra = {
                     let mut paddings = [0; #num_of_fields];
