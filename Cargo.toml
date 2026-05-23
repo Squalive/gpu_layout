@@ -1,6 +1,6 @@
 [package]
 name = "gpu_layout"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 
 [features]
@@ -17,4 +17,4 @@ gpu_layout_macros = { path = "macros" }
 # External
 cfg-if = { version = "1.0.4", default-features = false }
 thiserror = { version = "2.0.17", default-features = false }
-glam = { version = "0.30.9", default-features = false, optional = true }
+glam = { version = "0.33.0", default-features = false, features = ["all-types"], optional = true }
